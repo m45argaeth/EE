@@ -1,0 +1,216 @@
+import { Brain } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
+import type { Locale } from "@/lib/i18n"
+
+export type SiteId = "ebn" | "te" | "ttb" | "vfe" | "bd" | "ee"
+
+export interface SeriesItem {
+	id: SiteId
+	name: string
+	url: string
+}
+
+/** The educational SaaS in the same series. Shared across every site. */
+export const SERIES: SeriesItem[] = [
+	{
+		id: "ebn",
+		name: "Everything Becomes Numbers",
+		url: "https://ebn-playground.vercel.app",
+	},
+	{
+		id: "te",
+		name: "Token Explorer",
+		url: "https://te-playground.vercel.app",
+	},
+	{
+		id: "ttb",
+		name: "Text To Binary",
+		url: "https://ttb-playground.vercel.app",
+	},
+	{
+		id: "vfe",
+		name: "Video Frame Explorer",
+		url: "https://vfe-playground.vercel.app",
+	},
+	{
+		id: "ee",
+		name: "Embedding Explorer",
+		url: "https://ee-playground.vercel.app",
+	},
+	{
+		id: "bd",
+		name: "Bias Detector",
+		url: "https://bd-playground-snowy.vercel.app",
+	},
+]
+
+export type Universe = "ebn" | "mind"
+
+export interface Playground {
+	id: string
+	name: string
+	url?: string
+	universe: Universe
+	status: "live" | "wip"
+}
+
+/** Every playground across both universes (live + upcoming). */
+export const PLAYGROUNDS: Playground[] = [
+	{
+		id: "ebn",
+		name: "Everything Becomes Numbers",
+		url: "https://ebn-playground.vercel.app",
+		universe: "ebn",
+		status: "live",
+	},
+	{
+		id: "ttb",
+		name: "Text To Binary",
+		url: "https://ttb-playground.vercel.app",
+		universe: "ebn",
+		status: "live",
+	},
+	{
+		id: "vfe",
+		name: "Video Frame Explorer",
+		url: "https://vfe-playground.vercel.app",
+		universe: "ebn",
+		status: "live",
+	},
+	{
+		id: "te",
+		name: "Token Explorer",
+		url: "https://te-playground.vercel.app",
+		universe: "ebn",
+		status: "live",
+	},
+	{
+		id: "ee",
+		name: "Embedding Explorer",
+		url: "https://ee-playground.vercel.app",
+		universe: "ebn",
+		status: "live",
+	},
+	{ id: "prompt", name: "Prompt Explorer", universe: "ebn", status: "wip" },
+	{
+		id: "hallucination",
+		name: "Hallucination Explorer",
+		universe: "ebn",
+		status: "wip",
+	},
+	{
+		id: "compression",
+		name: "Compression Explorer",
+		universe: "ebn",
+		status: "wip",
+	},
+	{
+		id: "packet",
+		name: "Internet Packet Explorer",
+		universe: "ebn",
+		status: "wip",
+	},
+	{
+		id: "human-vs-ai",
+		name: "Human vs AI Explorer",
+		universe: "ebn",
+		status: "wip",
+	},
+	{
+		id: "bd",
+		name: "Bias Detector",
+		url: "https://bd-playground-snowy.vercel.app",
+		universe: "mind",
+		status: "live",
+	},
+	{ id: "memory", name: "Memory Explorer", universe: "mind", status: "wip" },
+	{
+		id: "false-memory",
+		name: "False Memory Explorer",
+		universe: "mind",
+		status: "wip",
+	},
+	{
+		id: "attention",
+		name: "Attention Explorer",
+		universe: "mind",
+		status: "wip",
+	},
+	{ id: "dopamine", name: "Dopamine Explorer", universe: "mind", status: "wip" },
+]
+
+export const UNIVERSES: { id: Universe; label: Record<Locale, string> }[] = [
+	{ id: "ebn", label: { id: "Semesta EBN", en: "EBN Universe" } },
+	{
+		id: "mind",
+		label: { id: "Semesta Pikiran Manusia", en: "Human Mind Universe" },
+	},
+]
+
+/** Portfolio hub that will host more SaaS over time. */
+export const PORTFOLIO = {
+	name: "Curious About Everything",
+	url: "https://sinigajelasin.vercel.app",
+}
+
+export const AUTHOR = {
+	name: "Ga | Curious About Everything 🔍",
+	url: "https://x.com/sinigajelasin",
+}
+
+interface UIStrings {
+	home: string
+	playground: string
+	tryIt: string
+	exploreHeading: string
+	seriesHeading: string
+	soon: string
+	portfolio: string
+	current: string
+	madeWith: string
+	by: string
+}
+
+/** Shared header/footer labels, identical across every site in the series. */
+export const UI: Record<Locale, UIStrings> = {
+	id: {
+		home: "Beranda",
+		playground: "Playground",
+		tryIt: "Coba",
+		exploreHeading: "Jelajahi",
+		seriesHeading: "Jelajahi semesta",
+		soon: "Segera",
+		portfolio: "Portofolio",
+		current: "kamu di sini",
+		madeWith: "Dibuat dengan",
+		by: "oleh",
+	},
+	en: {
+		home: "Home",
+		playground: "Playground",
+		tryIt: "Try It",
+		exploreHeading: "Explore",
+		seriesHeading: "Explore the universe",
+		soon: "Soon",
+		portfolio: "Portfolio",
+		current: "you are here",
+		madeWith: "Made with",
+		by: "by",
+	},
+}
+
+/** Identity of THIS site. Only this block differs between repos. */
+export const SITE: {
+	id: SiteId
+	name: string
+	icon: LucideIcon
+	tagline: Record<Locale, string>
+} = {
+	id: "ee",
+	name: "Embedding Explorer",
+	icon: Brain,
+	tagline: {
+		id: "Bagaimana AI memahami makna di balik kata-kata.",
+		en: "How AI understands meaning behind words.",
+	},
+}
