@@ -137,3 +137,4 @@ Embedding Explorer is part of the **Sini Gajelasin** educational ecosystem — a
 **[sinigajelasin.vercel.app](https://sinigajelasin.vercel.app)** · Because curiosity is the best teacher.
 
 </div>
+# Trigger Vercel rebuild
