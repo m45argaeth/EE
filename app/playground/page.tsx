@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -17,7 +18,7 @@ import { ConceptClusters } from "@/components/playground/concept-clusters"
 import { EducationalInsights } from "@/components/playground/educational-insights"
 import { ShareFeatures } from "@/components/playground/share-features"
 
-export default function PlaygroundPage() {
+function PlaygroundContent() {
   const { t } = useI18n()
   const searchParams = useSearchParams()
 
@@ -142,5 +143,13 @@ export default function PlaygroundPage() {
         <EducationalInsights />
       </div>
     </div>
+  )
+}
+
+export default function PlaygroundPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PlaygroundContent />
+    </Suspense>
   )
 }
