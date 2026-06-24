@@ -38,10 +38,35 @@ export const SERIES: SeriesItem[] = [
 		url: "https://ee-playground.vercel.app",
 	},
 	{
+		id: "pe",
+		name: "Prompt Explorer",
+		url: "https://pe-playground-snowy.vercel.app",
+	},
+	{
+		id: "he",
+		name: "Hallucination Explorer",
+		url: "https://he-playground.vercel.app",
+	},
+	{
+		id: "ce",
+		name: "Compression Explorer",
+		url: "https://ce-playground.vercel.app",
+	},
+	{
+		id: "ipe",
+		name: "Internet Packet Explorer",
+		url: "https://ipe-playground.vercel.app",
+	},
+	{
+		id: "hvsai",
+		name: "Human vs AI Explorer",
+		url: "https://hvsai-playground.vercel.app",
+	},
+	{
 		id: "bd",
 		name: "Bias Detector",
 		url: "https://bd-playground-snowy.vercel.app",
-	},
+	}
 ]
 
 export type Universe = "ebn" | "mind"
